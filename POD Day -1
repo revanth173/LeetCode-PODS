@@ -1,0 +1,35 @@
+66- Leet code POD Plus One
+Here i solve through a real world example ODOMETER
+For example We have drive 199km through adding 1km it will be 200 through we have 3 conditions to solve
+Run the loop for n-1 to 0;
+condition:1
+if digit is < 9 just add 1 return the array;
+condition 2 : if the array contains 199
+just replace 0 with 0 and whenever the value will be less than 9 it will add 1 and return the value;
+condition 3;
+let us assume that if 99 
+just make the values 0 and add 1 at the staring by creating a new array which is consisting new array length + 1;
+Solved!
+Wrong Thinking And Cons:
+Starting i think that just all the values sum like value*10 + num then add 1 to it and the value into another array.
+It is right upto array value 7/8
+because after 8 or 9 the value must exceed 10^9 so the CPU cant read the value it may give garbage values to you 
+it may cause the wrong output
+CODE;
+class Solution {
+    public int[] plusOne(int[] digits) {
+      int n = digits.length;
+      for(int i = n-1;i>=0;i--)
+      {
+        if(digits[i]<9)
+        {
+            digits[i]++;
+            return digits;
+        }
+        digits[i] = 0;
+      }
+      int[] newnumber = new int[n+1];
+      newnumber[0] = 1;
+      return newnumber;
+    }
+}
